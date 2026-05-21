@@ -1,0 +1,25 @@
+-- USE school;
+-- CREATE TABLE students (
+--     id INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键ID',
+--     name VARCHAR(20) NOT NULL COMMENT '姓名',
+--     age INT NOT NULL COMMENT '年龄',
+--     gender ENUM('男', '女') NOT NULL COMMENT '性别',
+--     major VARCHAR(30) NOT NULL COMMENT '专业'
+-- ) COMMENT='学生信息表';
+-- insert into  students (name, age, gender, major) 
+-- VALUES
+-- ('张三', 19, '男', '计算机科学'),
+-- ('李四', 21, '女', '软件工程'),
+-- ('王五', 18, '男', '计算机科学'),
+-- ('赵六', 22, '女', '数据科学'),
+-- ('孙七', 17, '男', '人工智能'),
+-- ('周八', 20, '女', '计算机科学'),
+-- ('吴九', 16, '男', '软件工程'),
+-- ('郑十', 23, '女', '计算机科学'),
+-- ('钱十一', 19, '女', '数据科学'),
+-- ('冯十二', 15, '男', '人工智能');
+-- select * from students where age < 20 order by age ASC
+-- select * from students where age < 20 order by name DESC
+-- delete from students WHERE age > 20 AND gender = '女'
+-- select * from students;
+select major as 专业,COUNT(*) as 人数,ROUND(avg(age), 2) as 平均年龄 from students group by major
